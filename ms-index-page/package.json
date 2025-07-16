@@ -1,0 +1,15 @@
+{
+  "name": "mreza-solidarnosti",
+  "version": "1.0.0",
+  "description": "Mreža solidarnosti - IT SRBIJA landing page",
+  "scripts": {
+    "dev": "npx live-server --port=3000 --open=/",
+    "build": "mkdir -p dist && cp index.html dist/ && cp styles.css dist/ && cp -r fonts dist/ && cp -r images dist/"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "keywords": ["solidarity", "education", "serbia", "landing-page"],
+  "author": "",
+  "license": "MIT"
+}
