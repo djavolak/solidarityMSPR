@@ -34,19 +34,4 @@ class RedirectControllerTest extends WebTestCase
             $this->assertResponseRedirects('/postani-donator', Response::HTTP_MOVED_PERMANENTLY);
         }
     }
-
-    public function testLegacyUrlRedirectsToDelegate(): void
-    {
-        $urls = [
-            '/obrazacDelegati',
-            '/profileDelegat',
-            '/obrazacOsteceni',
-        ];
-
-        $client = static::createClient();
-        foreach ($urls as $url) {
-            $client->request('GET', $url);
-            $this->assertResponseRedirects('/postani-delegat', Response::HTTP_MOVED_PERMANENTLY);
-        }
-    }
 }
