@@ -40,7 +40,6 @@ class DamagedEducatorController extends AbstractController
             $criteria = $form->getData();
         }
 
-        //        $criteria['schools'] = [];
         $isUniversity = false;
         $page = $request->query->getInt('page', 1);
 
