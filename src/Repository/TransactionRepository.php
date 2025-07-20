@@ -3,8 +3,6 @@
 namespace App\Repository;
 
 use App\Entity\DamagedEducator;
-use App\Entity\DamagedEducatorPeriod;
-use App\Entity\School;
 use App\Entity\Transaction;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator;
@@ -25,8 +23,7 @@ class TransactionRepository extends ServiceEntityRepository
     public function search(array $criteria, int $page = 1, int $limit = 50): array
     {
         $qb = $this->createQueryBuilder('t');
-        $qb->leftJoin('t.damagedEducator', 'e')
-            ->leftJoin('e.school', 's');
+        $qb->leftJoin('t.damagedEducator', 'e');
 
         if (isset($criteria['id'])) {
             $qb->andWhere('t.id = :id')
@@ -38,11 +35,6 @@ class TransactionRepository extends ServiceEntityRepository
                 ->setParameter('user', $criteria['user']);
         }
 
-        if (isset($criteria['period'])) {
-            $qb->andWhere('e.period = :period')
-                ->setParameter('period', $criteria['period']);
-        }
-
         if (!empty($criteria['donor'])) {
             $qb->leftJoin('t.user', 'u')
                 ->andWhere('u.email LIKE :donor')
@@ -52,21 +44,6 @@ class TransactionRepository extends ServiceEntityRepository
         if (!empty($criteria['educator'])) {
             $qb->andWhere('e.name LIKE :educator')
                 ->setParameter('educator', '%'.$criteria['educator'].'%');
-        }
-
-        if (!empty($criteria['school'])) {
-            $qb->andWhere('e.school = :school')
-                ->setParameter('school', $criteria['school']);
-        }
-
-        if (!empty($criteria['schools'])) {
-            $qb->andWhere('e.school IN (:schools)')
-                ->setParameter('schools', $criteria['schools']);
-        }
-
-        if (!empty($criteria['city'])) {
-            $qb->andWhere('s.city = :city')
-                ->setParameter('city', $criteria['city']);
         }
 
         if (!empty($criteria['accountNumber'])) {
@@ -117,20 +94,13 @@ class TransactionRepository extends ServiceEntityRepository
         ];
     }
 
-    public function getSumAmountTransactions(DamagedEducatorPeriod $period, ?School $school, array $statuses): int
+    public function getSumAmountTransactions(array $statuses): int
     {
         $qb = $this->createQueryBuilder('t');
         $qb = $qb->select('SUM(t.amount)')
             ->innerJoin('t.damagedEducator', 'de')
-            ->andWhere('de.period = :period')
-            ->setParameter('period', $period)
             ->andWhere('t.status IN (:statuses)')
             ->setParameter('statuses', $statuses);
-
-        if ($school) {
-            $qb->andWhere('de.school = :school')
-                ->setParameter('school', $school);
-        }
 
         return (int) $qb->getQuery()->getSingleScalarResult();
     }
@@ -157,13 +127,11 @@ class TransactionRepository extends ServiceEntityRepository
         $this->getEntityManager()->flush();
     }
 
-    public function getSumAmountForAccountNumber(int $period, string $accountNumber, array $statuses): int
+    public function getSumAmountForAccountNumber(string $accountNumber, array $statuses): int
     {
         $qb = $this->createQueryBuilder('t');
         $qb = $qb->select('SUM(t.amount)')
             ->innerJoin('t.damagedEducator', 'de')
-            ->andWhere('de.period = :period')
-            ->setParameter('period', $period)
             ->andWhere('t.accountNumber = :accountNumber')
             ->setParameter('accountNumber', $accountNumber)
             ->andWhere('t.status IN (:statuses)')
@@ -186,25 +154,6 @@ class TransactionRepository extends ServiceEntityRepository
         }, $useCache ? 1.0 : INF);
     }
 
-    public function getSchoolWithConfirmedTransactions(bool $useCache): array
-    {
-        return $this->cache->get('transaction-getSchoolWithConfirmedTransactions', function (ItemInterface $item) {
-            $item->expiresAfter(86400);
-
-            $qb = $this->createQueryBuilder('t');
-            $qb = $qb->select('s.name, c.name AS cityName, SUM(t.amount) AS totalConfirmedAmount, COUNT(DISTINCT t.accountNumber) AS totalDamagedEducators')
-                ->innerJoin('t.damagedEducator', 'de')
-                ->innerJoin('de.school', 's')
-                ->innerJoin('s.city', 'c')
-                ->andWhere('t.status = :status')
-                ->setParameter('status', Transaction::STATUS_CONFIRMED)
-                ->groupBy('s.id')
-                ->orderBy('c.name', 'ASC');
-
-            return $qb->getQuery()->getResult();
-        }, $useCache ? 1.0 : INF);
-    }
-
     public function getTotalActiveDonors(bool $useCache): int
     {
         return $this->cache->get('transaction-getTotalActiveDonors', function (ItemInterface $item) {
@@ -219,7 +168,7 @@ class TransactionRepository extends ServiceEntityRepository
         }, $useCache ? 1.0 : INF);
     }
 
-    public function getPendingTransactions(DamagedEducatorPeriod $period, array $schools): array
+    public function getPendingTransactions(): array
     {
         $qb = $this->createQueryBuilder('t');
         $qb = $qb->select('t')
@@ -229,10 +178,6 @@ class TransactionRepository extends ServiceEntityRepository
                 Transaction::STATUS_WAITING_CONFIRMATION,
                 Transaction::STATUS_EXPIRED,
             ])
-            ->andWhere('de.period = :period')
-            ->setParameter('period', $period)
-            ->andWhere('de.school IN (:schools)')
-            ->setParameter('schools', $schools)
             ->addOrderBy('de.id', 'ASC');
 
         $transactions = $qb->getQuery()->getResult();

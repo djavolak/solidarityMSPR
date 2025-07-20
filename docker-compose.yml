@@ -37,4 +37,4 @@ services:
       image: redis:7.4.2-alpine
 
 volumes:
-  mysql-data: { }
+    mysql-data: {}

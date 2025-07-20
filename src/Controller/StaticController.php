@@ -14,12 +14,6 @@ class StaticController extends AbstractController
     {
     }
 
-    #[Route('/kontakt', name: 'contact')]
-    public function contact(): Response
-    {
-        return $this->render('static/contact.html.twig');
-    }
-
     #[Route('/statusi-kod-ostecenih-prosvetnih-radnika', name: 'damaged_educator_status')]
     public function damagedEducatorStatus(): Response
     {
@@ -30,13 +24,5 @@ class StaticController extends AbstractController
     public function transactionStatus(): Response
     {
         return $this->render('static/transaction_status.html.twig');
-    }
-
-    #[Route('/umrezeno-po-skolama', name: 'schools')]
-    public function schools(): Response
-    {
-        return $this->render('static/schools.html.twig', [
-            'schools' => $this->transactionRepository->getSchoolWithConfirmedTransactions(true),
-        ]);
     }
 }
