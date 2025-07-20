@@ -1,23 +1,14 @@
-# Mreža Solidarnosti
-
-Mreža solidarnosti je inicijativa [IT Srbija](https://itsrbija.org/) koja inicijalno ima za cilj direktnu finansijsku podršku zaposlenima u prosveti čija je plata umanjena ili ukinuta zbog obustave rada.
-Mreža solidarnosti je zamišljena da ima upotrebu za sve slične inicijative na teritoriji Republike Srbije u budućnosti.
+# Mreža Solidarnosti (protiv represije)
 
 [![build](../../actions/workflows/build.yml/badge.svg)](../../actions/workflows/build.yml)
 
-![GitHub stars](https://img.shields.io/github/stars/IT-Srbija-Org/solidaritySF?style=social)
-![GitHub forks](https://img.shields.io/github/forks/IT-Srbija-Org/solidaritySF?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/IT-Srbija-Org/solidaritySF?style=social)
-![GitHub repo size](https://img.shields.io/github/repo-size/IT-Srbija-Org/solidaritySF)
-![GitHub language count](https://img.shields.io/github/languages/count/IT-Srbija-Org/solidaritySF)
-![GitHub top language](https://img.shields.io/github/languages/top/IT-Srbija-Org/solidaritySF)
-![GitHub last commit](https://img.shields.io/github/last-commit/IT-Srbija-Org/solidaritySF?color=red)
-
-## ❤️ Zajednica
-
-[IT Srbija](https://itsrbija.org/) okuplja profesionalce iz svih oblasti informacionih tehnologija s ciljem umrežavanja, 
-deljenja znanja i jačanja solidarnosti u IT industriji. Naša misija je povezivanje stručnjaka, 
-podrška zajednici i kreiranje prilika za profesionalni razvoj.
+![GitHub stars](https://img.shields.io/github/stars/IT-Srbija-Org/solidaritySF-MSPR?style=social)
+![GitHub forks](https://img.shields.io/github/forks/IT-Srbija-Org/solidaritySF-MSPR?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/IT-Srbija-Org/solidaritySF-MSPR?style=social)
+![GitHub repo size](https://img.shields.io/github/repo-size/IT-Srbija-Org/solidaritySF-MSPR)
+![GitHub language count](https://img.shields.io/github/languages/count/IT-Srbija-Org/solidaritySF-MSPR)
+![GitHub top language](https://img.shields.io/github/languages/top/IT-Srbija-Org/solidaritySF-MSPR)
+![GitHub last commit](https://img.shields.io/github/last-commit/IT-Srbija-Org/solidaritySF-MSPR?color=red)
 
 ## 🚀 Instalacija
 
@@ -47,12 +38,12 @@ Sva pitanja nam možete postaviti na zvanicnom [Discord](https://discord.gg/it-s
 
 ## 🐞 Pronašli ste problem?
 
-Slobodno napravite novi [Issue](https://github.com/IT-Srbija-Org/solidaritySF/issues) sa 
+Slobodno napravite novi [Issue](https://github.com/IT-Srbija-Org/solidaritySF-MSPR/issues) sa 
 odgovarajućim naslovom i opisom. Ako ste već pronašli rešenje za problem, 
-**slobodno otvorite [pull request](https://github.com/IT-Srbija-Org/solidaritySF/pulls)**.
+**slobodno otvorite [pull request](https://github.com/IT-Srbija-Org/solidaritySF-MSPR/pulls)**.
 
 ## ❤️ Hvala!
 
-<a href = "https://github.com/IT-Srbija-Org/solidaritySF/graphs/contributors">
-    <img src = "https://contrib.rocks/image?repo=IT-Srbija-Org/solidaritySF"/>
+<a href = "https://github.com/IT-Srbija-Org/solidaritySF-MSPR/graphs/contributors">
+    <img src = "https://contrib.rocks/image?repo=IT-Srbija-Org/solidaritySF-MSPR"/>
 </a>
