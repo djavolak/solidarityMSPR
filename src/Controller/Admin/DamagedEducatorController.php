@@ -122,7 +122,7 @@ final class DamagedEducatorController extends AbstractController
         $damagedEducator->setStatusComment(null);
         $entityManager->flush();
 
-        $this->addFlash('success', 'Uspešno ste vratili obrisanog oštećenog nastavnika.');
+        $this->addFlash('success', 'Uspešno ste vratili obrisanog oštećenog građanina.');
 
         return $this->redirectToRoute('admin_damaged_educator_list');
     }
