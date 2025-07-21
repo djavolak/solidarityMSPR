@@ -30,7 +30,7 @@ Sat: Sub
 Sun: Ned
 
 TransactionWaitingPayment: Čeka se uplata
-TransactionWaitingConfirmation: Čeka se potvrda od nastavnika
+TransactionWaitingConfirmation: Čeka se potvrda građana
 TransactionExpired: Istekla
 TransactionNotPaid: Uplata nije primljena
 TransactionConfirmed: Uplata potvrđena
