@@ -234,10 +234,10 @@ class Transaction
         $days = $this->getUpdatedAt()->diff(new \DateTime())->days;
         $hours = $this->getUpdatedAt()->diff(new \DateTime())->h;
 
-        //@TODO consider this
-//        if (self::STATUS_WAITING_CONFIRMATION == $this->getStatus() && 0 == $days && $hours <= 6) {
-//            return false;
-//        }
+        // @TODO consider this
+        //        if (self::STATUS_WAITING_CONFIRMATION == $this->getStatus() && 0 == $days && $hours <= 6) {
+        //            return false;
+        //        }
 
         if (in_array($this->getStatus(), [self::STATUS_EXPIRED, self::STATUS_WAITING_CONFIRMATION])) {
             return true;

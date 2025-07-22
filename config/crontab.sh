@@ -5,9 +5,6 @@
 # Donors
 0 8 * * 1 php /var/www/solidaritySF-MSPR/bin/console app:thank-you-donors >> /var/www/solidaritySF-MSPR/var/log/crontab-thank-you-donors-`date +\%d-\%m-\%Y`.txt
 
-# Cache
-*/10 * * * * php /var/www/solidaritySF-MSPR/bin/console app:cache-numbers >> /var/www/solidaritySF-MSPR/var/log/crontab-cache-numbers-`date +\%d-\%m-\%Y`.txt
-
 # Cleaner
 0 2 * * * find /var/www/solidaritySF-MSPR/var/log/crontab* -maxdepth 0 -type f -mtime +30 -exec rm {} \;
 
