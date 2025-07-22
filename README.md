@@ -2,13 +2,13 @@
 
 [![build](../../actions/workflows/build.yml/badge.svg)](../../actions/workflows/build.yml)
 
-![GitHub stars](https://img.shields.io/github/stars/IT-Srbija-Org/solidaritySF-MSPR?style=social)
-![GitHub forks](https://img.shields.io/github/forks/IT-Srbija-Org/solidaritySF-MSPR?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/IT-Srbija-Org/solidaritySF-MSPR?style=social)
-![GitHub repo size](https://img.shields.io/github/repo-size/IT-Srbija-Org/solidaritySF-MSPR)
-![GitHub language count](https://img.shields.io/github/languages/count/IT-Srbija-Org/solidaritySF-MSPR)
-![GitHub top language](https://img.shields.io/github/languages/top/IT-Srbija-Org/solidaritySF-MSPR)
-![GitHub last commit](https://img.shields.io/github/last-commit/IT-Srbija-Org/solidaritySF-MSPR?color=red)
+![GitHub stars](https://img.shields.io/github/stars/IT-Srbija-Org/solidarityMSPR?style=social)
+![GitHub forks](https://img.shields.io/github/forks/IT-Srbija-Org/solidarityMSPR?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/IT-Srbija-Org/solidarityMSPR?style=social)
+![GitHub repo size](https://img.shields.io/github/repo-size/IT-Srbija-Org/solidarityMSPR)
+![GitHub language count](https://img.shields.io/github/languages/count/IT-Srbija-Org/solidarityMSPR)
+![GitHub top language](https://img.shields.io/github/languages/top/IT-Srbija-Org/solidarityMSPR)
+![GitHub last commit](https://img.shields.io/github/last-commit/IT-Srbija-Org/solidarityMSPR?color=red)
 
 ## 🚀 Instalacija
 
@@ -38,12 +38,12 @@ Sva pitanja nam možete postaviti na zvanicnom [Discord](https://discord.gg/it-s
 
 ## 🐞 Pronašli ste problem?
 
-Slobodno napravite novi [Issue](https://github.com/IT-Srbija-Org/solidaritySF-MSPR/issues) sa 
+Slobodno napravite novi [Issue](https://github.com/IT-Srbija-Org/solidarityMSPR/issues) sa 
 odgovarajućim naslovom i opisom. Ako ste već pronašli rešenje za problem, 
-**slobodno otvorite [pull request](https://github.com/IT-Srbija-Org/solidaritySF-MSPR/pulls)**.
+**slobodno otvorite [pull request](https://github.com/IT-Srbija-Org/solidarityMSPR/pulls)**.
 
 ## ❤️ Hvala!
 
-<a href = "https://github.com/IT-Srbija-Org/solidaritySF-MSPR/graphs/contributors">
-    <img src = "https://contrib.rocks/image?repo=IT-Srbija-Org/solidaritySF-MSPR"/>
+<a href = "https://github.com/IT-Srbija-Org/solidarityMSPR/graphs/contributors">
+    <img src = "https://contrib.rocks/image?repo=IT-Srbija-Org/solidarityMSPR"/>
 </a>
