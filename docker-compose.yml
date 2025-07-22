@@ -1,6 +1,6 @@
 services:
-  solidarityPR-nginx-service:
-    container_name: solidarityPR-nginx-container
+  solidarity-mspr-nginx-service:
+    container_name: solidarity-mspr-nginx-container
     image: nginx:1.27.4
     working_dir: '/var/www/project'
     ports: [ '2000:80' ]
@@ -8,8 +8,8 @@ services:
       - './:/var/www/project'
       - './docker/nginx/default.conf:/etc/nginx/conf.d/default.conf'
 
-  solidarityPR-php-service:
-    container_name: solidarityPR-php-container
+  solidarity-mspr-php-service:
+    container_name: solidarity-mspr-php-container
     build:
       context: .
       dockerfile: './docker/php/Dockerfile'
@@ -17,23 +17,23 @@ services:
     volumes:
       - './:/var/www/project'
 
-  solidarityPR-mysql-service:
-    container_name: solidarityPR-mysql-container
+  solidarity-mspr-mysql-service:
+    container_name: solidarity-mspr-mysql-container
     image: mysql:8.0
     ports: [ '2001:3306' ]
     volumes:
       - 'mysql-data:/var/lib/mysql'
     environment:
       - MYSQL_ROOT_PASSWORD=123456
-      - MYSQL_DATABASE=solidarityPR
+      - MYSQL_DATABASE=solidarityMSPR
 
-  solidarityPR-mailcatcher-service:
-    container_name: solidarityPR-mailcatcher-container
+  solidarity-mspr-mailcatcher-service:
+    container_name: solidarity-mspr-mailcatcher-container
     image: axllent/mailpit:v1.24
     ports: [ '2002:8025' ]
 
-  solidarityPR-redis-service:
-      container_name: solidarityPR-redis-container
+  solidarity-mspr-redis-service:
+      container_name: solidarity-mspr-redis-container
       image: redis:7.4.2-alpine
 
 volumes:
