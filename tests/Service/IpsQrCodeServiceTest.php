@@ -25,7 +25,6 @@ class IpsQrCodeServiceTest extends TestCase
         $args = [
             'bankAccountNumber' => '123456789012345611',
             'payeeName' => 'JEST Ltd., Test',
-            'payeeCityName' => 'Beograd',
             'amount' => '1295,',
             'paymentPurpose' => 'Test Purpose',
         ];
@@ -45,7 +44,6 @@ class IpsQrCodeServiceTest extends TestCase
             'bankAccountNumber' => '123456789012345611',
             'payeeName' => 'JEST Ltd., Test',
             'amount' => '1295,',
-            'payeeCityName' => 'Beograd',
             'paymentCode' => '123',
             'paymentPurpose' => 'Testing',
         ];
@@ -62,7 +60,6 @@ class IpsQrCodeServiceTest extends TestCase
             'bankAccountNumber' => '123456789012345611',
             'payeeName' => 'JEST Ltd., Test',
             'amount' => '1295,',
-            'payeeCityName' => 'Beograd',
             'paymentPurpose' => 'Test Purpose',
             'referenceCode' => '972012345',
         ];
