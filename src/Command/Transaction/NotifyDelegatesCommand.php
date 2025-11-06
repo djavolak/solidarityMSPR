@@ -44,7 +44,7 @@ class NotifyDelegatesCommand extends Command
         foreach ($delegates as $delegate) {
             $havePendingTransactions = false;
 
-            $damagedEducators = $this->entityManager->getRepository(DamagedEducator::class)->findBy([]);
+            $damagedEducators = $this->entityManager->getRepository(DamagedEducator::class)->findBy(['createdBy' => $delegate->getId()]);
             foreach ($damagedEducators as $damagedEducator) {
                 $transactions = $this->entityManager->getRepository(Transaction::class)->findBy([
                     'damagedEducator' => $damagedEducator,
