@@ -1,8 +1,8 @@
 {% macro back(routeName, parameters = {}) %}
-    <div class="card bg-base-100 shadow m-4 mb-2 mt-10">
+    <div class="bg-base-100 shadow m-4 mt-10 mb-2 card">
         <div class="px-3 py-4">
-            <a href="{{ path(routeName, parameters) }}" class="link link-primary no-underline">
-                <span class="ti ti-chevron-left text-2xl relative top-1"></span>
+            <a href="{{ path(routeName, parameters) }}" class="no-underline link link-primary">
+                <span class="top-1 ti-chevron-left relative text-2xl ti"></span>
                 Nazad
             </a>
         </div>
@@ -10,22 +10,22 @@
 {% endmacro %}
 
 {% macro tutorial() %}
-    <div class="m-4 -mb-8 mt-10 text-end">
-        <button class="btn btn-warning js-info-button">
-            <span class="ti ti-help-circle text-xl"></span> Uputstvo za korišćenje
+    <div class="z-20 relative mt-10 text-end">
+        <button class="top-4 right-8 absolute btn btn-warning js-info-button">
+            <span class="text-xl ti ti-help-circle"></span> Uputstvo za korišćenje
         </button>
     </div>
 {% endmacro %}
 
 {% macro pagination(routeName, totalPages, currentPage) %}
     {% if totalPages > 1 %}
-        <div class="join flex justify-center my-5">
+        <div class="flex justify-center my-5 join">
             <a href="{{ path(routeName, app.request.query.all|merge({ page: currentPage - 1 })) }}" class="join-item btn {% if currentPage == 1 %}btn-disabled{% endif %}">
-                <span class="ti ti-chevron-left text-2xl"></span> Prethodna
+                <span class="ti-chevron-left text-2xl ti"></span> Prethodna
             </a>
 
             <a href="{{ path(routeName, app.request.query.all|merge({ page: currentPage + 1 })) }}" class="join-item btn {% if currentPage >= totalPages %}btn-disabled{% endif %}">
-                Sledeća <span class="ti ti-chevron-right text-2xl"></span>
+                Sledeća <span class="ti-chevron-right text-2xl ti"></span>
             </a>
         </div>
     {% endif %}
@@ -35,14 +35,14 @@
     {% if app.user and app.user.userDonor %}
         <li>
             <a href="{{ path('donor_request_form') }}" class="text-lg lg:text-base px-4 py-3 lg:py-2 lg:px-3 {{ additional_link_classes }}">
-                <span class="ti ti-heart-filled text-xl"></span>
+                <span class="text-xl ti ti-heart-filled"></span>
                 Profil
             </a>
         </li>
     {% else %}
         <li>
             <a href="{{ path('donor_request_form') }}" class="text-lg lg:text-base px-4 py-3 lg:py-2 lg:px-3 {{ additional_link_classes }}">
-                <span class="ti ti-heart text-xl"></span>
+                <span class="text-xl ti ti-heart"></span>
                 Postani donator
             </a>
         </li>
@@ -52,7 +52,7 @@
         {% if app.user.userDonor %}
             <li>
                 <a href="{{ path('donor_transaction_list') }}" class="text-lg lg:text-base px-4 py-3 lg:py-2 lg:px-3 {{ additional_link_classes }}">
-                    <span class="ti ti-credit-card-pay text-xl"></span>
+                    <span class="text-xl ti ti-credit-card-pay"></span>
                     Instrukcije za uplatu
                 </a>
             </li>
@@ -61,7 +61,7 @@
         {% if 'ROLE_DELEGATE' in app.user.getRoles %}
             <li>
                 <a href="{{ path('delegate_damaged_educator_list') }}" class="text-lg lg:text-base px-4 py-3 lg:py-2 lg:px-3 {{ additional_link_classes }}">
-                    <span class="ti ti-school text-xl"></span>
+                    <span class="text-xl ti ti-school"></span>
                     Spisak oštećenih
                 </a>
             </li>
@@ -70,7 +70,7 @@
         {% if 'ROLE_ADMIN' in app.user.getRoles %}
             <li>
                 <a href="{{ path('admin_home') }}" class="text-lg lg:text-base px-4 py-3 lg:py-2 lg:px-3 {{ additional_link_classes }}">
-                    <span class="ti ti-settings text-xl"></span>
+                    <span class="text-xl ti ti-settings"></span>
                     Admin Panel
                 </a>
             </li>
@@ -78,21 +78,21 @@
 
         <li>
             <a href="{{ path('profile_edit') }}" class="text-lg lg:text-base px-4 py-3 lg:py-2 lg:px-3 {{ additional_link_classes }}">
-                <span class="ti ti-user text-xl"></span>
+                <span class="text-xl ti ti-user"></span>
                 Korisnički podaci
             </a>
         </li>
 
         <li>
             <a href="{{ path('logout') }}" class="text-lg lg:text-base px-4 py-3 lg:py-2 lg:px-3 {{ additional_link_classes }}">
-                <span class="ti ti-logout text-xl"></span>
+                <span class="text-xl ti ti-logout"></span>
                 Odjavi se
             </a>
         </li>
     {% else %}
         <li>
             <a href="{{ path('login') }}" class="text-lg lg:text-base px-4 py-3 lg:py-2 lg:px-3 {{ additional_link_classes }}">
-                <span class="ti ti-user text-xl"></span>
+                <span class="text-xl ti ti-user"></span>
                 Uloguj se
             </a>
         </li>

@@ -19,7 +19,7 @@ Kompletna instalacija i inicijalna konfiguracija se vrši automatski pokretanjem
 bash ./install.sh
 ```
 
-Projekat će biti inicijalno podignut sa svim test podacima na adresi [localhost:2000](http://localhost:1000). 
+Projekat će biti inicijalno podignut sa svim test podacima na adresi [localhost:2000](http://localhost:2000). 
 Aplikacija koristi [passwordless](https://symfony.com/doc/6.4/security/login_link.html) autentifikaciju, 
 tako da se umesto lozinke pri logovanju korisniku šalje link za prijavu na njegovu email adrese.
 
@@ -29,7 +29,7 @@ tako da se umesto lozinke pri logovanju korisniku šalje link za prijavu na njeg
 | delegat@gmail.com  | ROLE_DELEGAT |
 | admin@gmail.com    | ROLE_ADMIN   |
 
-Nakon unosa email adrese prilikom logovanja, link za prijavu će biti dostupan na adresi [localhost:2002](http://localhost:1002)
+Nakon unosa email adrese prilikom logovanja, link za prijavu će biti dostupan na adresi [localhost:2002](http://localhost:2002)
 ([Mailcatcher](https://mailcatcher.me/) service koji hvata sve email poruke u razvojnom okruženju).
 
 ## 📫 Imate pitanje?
