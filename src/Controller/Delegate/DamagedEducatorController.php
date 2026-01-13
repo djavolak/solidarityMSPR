@@ -35,7 +35,7 @@ class DamagedEducatorController extends AbstractController
         ]);
         $form->handleRequest($request);
         $criteria = [
-            'createdBy' => $this->getUser()->getId()
+            'createdBy' => $this->getUser(),
         ];
 
         if ($form->isSubmitted()) {
