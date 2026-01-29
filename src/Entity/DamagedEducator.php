@@ -19,7 +19,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\HasLifecycleCallbacks]
 class DamagedEducator
 {
-    public const MONTHLY_LIMIT = 120000;
+    public const MONTHLY_LIMIT = 400000;
     public const STATUS_NEW = 1;
     public const STATUS_DELETED = 2;
 
