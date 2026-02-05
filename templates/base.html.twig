@@ -6,11 +6,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>{% block title %}Mreža solidarnosti - IT Srbija{% endblock %}</title>
+        <title>{% block title %}Mreža solidarnosti{% endblock %}</title>
 
         <meta name="title" content="{{ block('title') }}">
         <meta name="description" content="Mreža solidarnosti protiv represije pruža brzu pravnu i finansijsku podršku građanima koji trpe posledice zbog slobodnog izražavanja i protesta.">
-        <meta name="keywords" content="Mreža solidarnosti, IT Srbija, prosveta, donacije, podrška nastavnicima, solidarnost, pomoć nastavnicima, obustava rada, direktna podrška, borba protiv represije, AKC, stit">
+        <meta name="keywords" content="Mreža solidarnosti, prosveta, donacije, podrška nastavnicima, solidarnost, pomoć nastavnicima, obustava rada, direktna podrška, borba protiv represije, AKC, stit">
 
         <link rel="icon" type="image/png" href="{{ asset('favicon-96x96.png') }}" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}" />
@@ -86,11 +86,7 @@
         {% block body %}{% endblock %}
 
         {% block footer %}
-            <div class="mt-10 pb-10">
-                <a href="https://itsrbija.org">
-                    <img src="{{ asset('image/logo-itsrbija.svg') }}" alt="IT Srbija logo" class="mx-auto w-12 h-12 rounded-lg bg-base-100 transition duration-200 hover:scale-110">
-                </a>
-            </div>
+
         {% endblock %}
 
         <script src="{{ asset('javascript/jquery.min.js') }}"></script>
