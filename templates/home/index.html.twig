@@ -12,14 +12,8 @@
             </p>
         </header>
 
-        <div class="flex gap-4 flex-col md:flex-row">
-            <section class="rounded-lg bg-base-100 shadow-sm w-full ">
-            <p class="mt-6 text-gray-500 text-center" style="font-size:18px">
-                Trenutno je u Mreži oštećenih
-            </p>
-            <p style="color:#7ebf50;font-size:42px" class="text-center"><strong>18</strong></p>
-            </section>
-        </div>
+{#        {{ render(controller('App\\Controller\\HomeController::generalNumbers')) }}#}
+
         <div class="py-10 flex gap-4 flex-col md:flex-row">
             <section class="rounded-lg bg-base-100 shadow-sm w-full ">
                 <p class="mt-6 ml-6 mr-6 text-gray-500 text-center" style="font-size:18px">
@@ -30,8 +24,6 @@
                 <p class="text-center mb-6" style="color:#7ebf50;font-size:18px"><strong>Solidarno nastavljamo borbu!</strong></p>
             </section>
         </div>
-
-{#        {{ render(controller('App\\Controller\\HomeController::generalNumbers')) }}#}
 
         {% block supportButton %}
             {% if not app.user or not app.user.userDonor %}
